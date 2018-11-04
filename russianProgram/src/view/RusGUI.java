@@ -47,7 +47,7 @@ public class RusGUI extends JFrame{
 	JButton add = new JButton("Add vocab");
 	JButton exit = new JButton("Quit");
 	
-
+	//test 1
 	private JPanel middlePanels;
 	private JPanel learnPanel = new JPanel();
 	private JPanel listPanel = new JPanel();
