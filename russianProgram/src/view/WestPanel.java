@@ -37,17 +37,24 @@ public class WestPanel extends JPanel{
 	JPanel S = new JPanel();
 	
 	JPanel homeP = new JPanel();
-	JPanel learnP = new JPanel();
-	JPanel listP = new JPanel();
+	JPanel learnP;
+	JPanel listP;
 	JPanel addP = new JPanel();
 	JPanel quizP = new JPanel();
 	
 	
-	private List<Vocab> vocab = new ArrayList<Vocab>();
+	private List<Vocab> vocab1 = new ArrayList<Vocab>();
 	
 	//private List<Vocab> vocab = new ArrayList<Vocab>();
 	
 	public WestPanel(List<Vocab> vocab) {
+		this.vocab1 = vocab;
+		
+		System.out.println(vocab1.get(0).getEng());
+		System.out.println(vocab1.get(0).getEng());
+		
+		listP = new ListPanel(vocab1);
+		learnP = new JPanel();
 		
 		C.setLayout(card);
 		
@@ -66,13 +73,13 @@ public class WestPanel extends JPanel{
 		
 		homeP.setBackground(Color.BLUE);
 		learnP.setBackground(Color.BLACK);
-		listP.setBackground(Color.WHITE);
+		//listP.setBackground(Color.WHITE);
 		addP.setBackground(Color.GREEN);
 		quizP.setBackground(Color.RED);
 
 		
 		setBackground(Color.YELLOW);
-		this.vocab = vocab;
+		
 		setLayout(sou);
 		N.setBackground(Color.WHITE);
 		E.setBackground(Color.WHITE);

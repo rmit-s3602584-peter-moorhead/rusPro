@@ -32,15 +32,15 @@ public class Start {
 		
 		
 		
-		System.out.println("-----------------");
-		System.out.println(v);
-		System.out.println("-----------------");
+		//System.out.println("-----------------");
+		//System.out.println(v);
+		//System.out.println("-----------------");
 		
 		RusGUI g = new RusGUI(v);
 		
-		System.out.println("-----------------");
-		System.out.println(v);
-		System.out.println("-----------------");
+		//System.out.println("-----------------");
+		//System.out.println(v);
+		//System.out.println("-----------------");
 		
 		g.run();
 		
@@ -49,13 +49,13 @@ public class Start {
 		m.saveVocabList(v);
 		m.loadVocabList(v);
 		
-		System.out.println("-----------------");
-		System.out.println(v);
-		System.out.println("-----------------");
+		//System.out.println("-----------------");
+		//System.out.println(v);
+		//System.out.println("-----------------");
 		
-		System.out.println("-----------------");
-		System.out.println(v.get(0).getRus());
-		System.out.println("-----------------");
+		//System.out.println("-----------------");
+		//System.out.println(v.get(0).getRus());
+		//System.out.println("-----------------");
 		
 		g.change(v);
 		
