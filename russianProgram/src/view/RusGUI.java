@@ -13,6 +13,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
@@ -37,9 +38,6 @@ public class RusGUI extends JFrame{
 	private JButton listPage = new JButton("List Saved Phrases"),
 					quizPage = new JButton("Take a Quiz"),
 					addPage = new JButton("Add a Phrase to the Program");
-	
-	
-
 
 	JButton learn = new JButton("Learn");
 	JButton list = new JButton("List");
@@ -55,7 +53,7 @@ public class RusGUI extends JFrame{
 	private JPanel addPanel = new JPanel();
 	
 	
-	GridLayout westGrid = new GridLayout(5, 1, 20, 20);
+	//GridLayout westGrid = new GridLayout(5, 1, 20, 20);
    
 	CardLayout centerCard = new CardLayout();
 	
@@ -65,34 +63,30 @@ public class RusGUI extends JFrame{
 	
 	public RusGUI(List<Vocab> v) {
 		
-		
-		
-		this.middlePanels = center;
-		
 		middlePanels = new JPanel(centerCard);
 		middlePanels.add(learnPanel);
 		middlePanels.add(listPanel);
 		middlePanels.add(quizPanel);
 		middlePanels.add(addPanel);
 
-		add(middlePanels);
 		
-		String[][] vocabW = {{v.get(0).getId()}, {v.get(0).getEng()}, {v.get(0).getRus()}};
+		//frame.add(middlePanels);
+		
+		/*String[][] vocabW = {{v.get(0).getId()}, {v.get(0).getEng()}, {v.get(0).getRus()}};
 		String[] columnName = {"ID", "English", "Russian"};
 		table = new JTable(vocabW, columnName);
-		table.setBounds(30, 40, 200, 300);
+		table.setBounds(30, 40, 200, 300);*/
 		
+		quizPanel.add(list);
 		
-		centerP = new CenterPanel(v, centerCard, center);
+		//centerP = new CenterPanel(v, centerCard, center);
 		
-		westP = new WestPanel(v, centerCard, center);
+		westP = new WestPanel(v);
 		
 		//FIX
 		
-		frame.add(center, BorderLayout.CENTER);
-		frame.add(westP, BorderLayout.WEST);
-		
-		westP.setLayout(westGrid);
+		//frame.add(center, BorderLayout.CENTER);
+		frame.add(westP, BorderLayout.CENTER);
 		
 		learn.setBackground(g);
 		learn.setForeground(Color.WHITE);

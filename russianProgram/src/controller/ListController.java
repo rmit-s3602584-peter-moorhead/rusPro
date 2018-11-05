@@ -2,6 +2,7 @@ package controller;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -14,22 +15,34 @@ import model.Vocab;
 
 public class ListController implements ActionListener{
 
+	private JPanel card1;
+	JPanel test1 = new JPanel();
+	JPanel test2 = new JPanel();
+	JPanel test3 = new JPanel();
 	
-	private CardLayout card1 = new CardLayout();
-	private JPanel center = new JPanel(card1);
+	CardLayout test = new CardLayout();
 	
-	public ListController(List<Vocab> vocab, CardLayout card, JPanel center) {
+	//private CardLayout lay = (CardLayout)(card1.getLayout());
+	
+	
+	public ListController(List<Vocab> vocab, CardLayout lay, JPanel card) {
 		this.card1 = card;
-		this.center = center;
-		 
+		card1.add(test1);
+		card1.add(test2);
+		card1.add(test3);
+		
+		card1 = new JPanel(test);
+		
+		
+		this.test = lay;
+		
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
-		center.setBackground(Color.red);
-		card1.next(center);
-		
+		card1.setBackground(Color.green);
+		test.next(card1);
 	}
 	
 }
