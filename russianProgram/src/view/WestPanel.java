@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 
@@ -22,6 +23,7 @@ public class WestPanel extends JPanel{
 
 	Color g = new Color(44, 47, 51);
 	Color bl = new Color(35, 39, 42);
+	Color lg = new Color(153,170,181);
 	
 	private JButton home, learn, list, add, quiz, exit;
 	
@@ -42,13 +44,15 @@ public class WestPanel extends JPanel{
 	JPanel addP = new JPanel();
 	JPanel quizP = new JPanel();
 	
+	JFrame frame1 = new JFrame();
 	
 	private List<Vocab> vocab1 = new ArrayList<Vocab>();
 	
 	//private List<Vocab> vocab = new ArrayList<Vocab>();
 	
-	public WestPanel(List<Vocab> vocab) {
+	public WestPanel(List<Vocab> vocab, JFrame frame) {
 		this.vocab1 = vocab;
+		this.frame1 = frame;
 		
 		System.out.println(vocab1.get(0).getEng());
 		System.out.println(vocab1.get(0).getEng());
@@ -71,18 +75,18 @@ public class WestPanel extends JPanel{
 		C.add(addP, "add");
 		C.add(quizP, "quiz");
 		
-		homeP.setBackground(Color.BLUE);
-		learnP.setBackground(Color.BLACK);
+		homeP.setBackground(g);
+		learnP.setBackground(g);
 		//listP.setBackground(Color.WHITE);
-		addP.setBackground(Color.GREEN);
-		quizP.setBackground(Color.RED);
+		addP.setBackground(g);
+		quizP.setBackground(g);
 
 		
-		setBackground(Color.YELLOW);
+		setBackground(lg);
 		
 		setLayout(sou);
-		N.setBackground(Color.WHITE);
-		E.setBackground(Color.WHITE);
+		N.setBackground(g);
+		E.setBackground(g);
 		
 		W.add(home);
 		W.add(learn);
@@ -91,10 +95,10 @@ public class WestPanel extends JPanel{
 		W.add(quiz);
 		W.add(exit);
 		
-		W.setBackground(Color.GREEN);
+		W.setBackground(g);
 
-		C.setBackground(Color.RED);
-		S.setBackground(Color.BLUE);
+		C.setBackground(g);
+		S.setBackground(g);
 		
 		N.setMinimumSize(new Dimension(100, 200));
 		
@@ -174,6 +178,8 @@ public class WestPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				
+				System.exit(0);
+				System.out.println("exit");
 			}
 		});
 		

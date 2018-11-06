@@ -18,39 +18,46 @@ public class ListPanel extends JPanel{
 	JTable table;
 	JScrollPane scroll;
 	
+	Color g = new Color(44, 47, 51);
+	Color bl = new Color(35, 39, 42);
+	Color lg = new Color(153,170,181);
+	
 	public ListPanel(List<Vocab> vocab) {
 		this.vocab1 = vocab;
-		this.setBackground(Color.YELLOW);
-		System.out.println(vocab1.get(0).getEng());
+		this.setBackground(bl);
 		
-		String[][] data = {{"English", "кгыыфш"},{"English", "кгыыфш"},{"English", "кгыыфш"}};
 		String[] columnNames = {"English", "Russian"};
 		
-		//SOLUTION?
-		/*for(int i = 0; i<vocab1.size(); i++) {
-			for(int j = 0; j<vocab1.size(); j++) {
-				data[i][j] = vocab1.get(i).getEng();
-			}
-		}*/
-		
-		table = new JTable(data, columnNames);
-		
-		scroll = new JScrollPane(table);
-		
-		add(scroll);
-		//THIS IS BROKEN
-		/*
-		TableModel tableModel = new DefaultTableModel(data, columnNames);
-
+		DefaultTableModel tableModel = new DefaultTableModel(columnNames, 0);
 		JTable table1 = new JTable(tableModel);
 		
-		Object rowData[] = new Object[2];
-        for(int i = 0; i < vocab1.size(); i++)
-        {
-            rowData[0] = vocab1.get(i).getEng();
-            rowData[1] = vocab1.get(i).getRus();
-            ((DefaultTableModel) tableModel).addRow(rowData);
-        }*/
+		//not allow user to edit table
+		table1.setEnabled(false);
+		table1.getTableHeader().setReorderingAllowed(false);
+		
+		table1.setBackground(bl);
+		table1.setForeground(lg);
+		
+		
+		
+		//fill table with vocab data
+		for(int i = 0; i<vocab1.size(); i++) {
+			String english = vocab1.get(i).getEng();
+			String russian = vocab1.get(i).getRus();
+			
+			String[] data1 = {english, russian};
+			
+			tableModel.addRow(data1);
+		}
+
+		scroll = new JScrollPane(table1);
+		
+		
+		scroll.setBackground(g);
+		scroll.setForeground(g);
+		
+		
+		add(scroll);
 	}
 	
 }

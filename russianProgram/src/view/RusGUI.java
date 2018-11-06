@@ -81,7 +81,7 @@ public class RusGUI extends JFrame{
 		
 		//centerP = new CenterPanel(v, centerCard, center);
 		
-		westP = new WestPanel(v);
+		westP = new WestPanel(v, frame);
 		
 		//FIX
 		
