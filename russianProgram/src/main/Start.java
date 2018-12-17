@@ -88,7 +88,7 @@ public class Start {
 		
 		Model m = new Model();
 		m.start();
-		m.saveVocabList(v);
+		//m.saveVocabList(v);
 		m.loadVocabList(v);
 		
 		//System.out.println("-----------------");

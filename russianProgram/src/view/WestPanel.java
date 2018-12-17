@@ -41,7 +41,7 @@ public class WestPanel extends JPanel{
 	JPanel homeP = new JPanel();
 	JPanel learnP;
 	JPanel listP;
-	JPanel addP = new JPanel();
+	JPanel addP;
 	JPanel quizP = new JPanel();
 	
 	JFrame frame1 = new JFrame();
@@ -57,6 +57,7 @@ public class WestPanel extends JPanel{
 		System.out.println(vocab1.get(0).getEng());
 		System.out.println(vocab1.get(0).getEng());
 		
+		addP = new AddPanel(vocab1);
 		listP = new ListPanel(vocab1);
 		learnP = new JPanel();
 		
